@@ -4,6 +4,8 @@ import type { FC } from "react"
 import { useLocation } from "@tanstack/react-router"
 import { Helmet } from "react-helmet"
 
+import metadata from "../../../conf/metadata.json"
+
 export const ProductDetailPage: FC = () => {
   const location = useLocation() as { state?: { product?: Product } }
 
@@ -17,11 +19,24 @@ export const ProductDetailPage: FC = () => {
     )
   }
 
+  const title = metadata.productDetail.title.replace("%title%", product.title)
+  const description = metadata.productDetail.description.replace(
+    "%title%",
+    product.title,
+  )
+  const keywords = metadata.productDetail.keywords.replace(
+    /%title%/g,
+    product.title,
+  )
+
   return (
     <>
       <Helmet>
-        <title>{product.title}</title>
-        <meta name='description' content={product.description} />
+        <title>{title}</title>
+        <meta name='description' content={description} />
+        <meta name='keywords' content={keywords} />
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={description} />
       </Helmet>
 
       <main className='container py-xl'>
