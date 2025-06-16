@@ -9,7 +9,7 @@ Data is fetched from [dummyjson.com](https://dummyjson.com).
 
 ```bash
 git clone https://github.com/dshamsani/summy.git
-cd your-repo-name
+cd summy
 ```
 
 ### 2. Install dependencies
