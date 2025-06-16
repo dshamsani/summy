@@ -1,15 +1,11 @@
 import type { FC } from "react"
+import type { Product } from "@/types/productTypes"
 
 import { Link } from "@tanstack/react-router"
 import { LoadingSkeleton } from "@/components/global/LoadingSkeleton"
 
 interface ProductCardProps {
-  product: {
-    id: number
-    title: string
-    price: number
-    images: string[]
-  }
+  product: Product
   isLoading?: boolean
 }
 
@@ -18,6 +14,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, isLoading }) => {
     <Link
       to='/product/$id'
       params={{ id: product?.id ? product?.id.toString() : "" }}
+      state={{ product } as any}
       className='bg-cardBg block rounded-xl border border-border p-md transition-all duration-300 hover:shadow'
     >
       <div className='mb-2 h-48 w-full overflow-hidden rounded-md'>

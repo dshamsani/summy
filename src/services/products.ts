@@ -1,7 +1,7 @@
 import type { Product } from "@/types/productTypes"
 
 import { handleFetch } from "@/lib/handleFetch"
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query"
+import { useInfiniteQuery } from "@tanstack/react-query"
 
 export const fetchProductsList = async ({
   limit = 10,
@@ -38,19 +38,4 @@ export const useFetchProductsList = (limit: number, page: number) =>
       if (nextOffset >= lastPage.total) return undefined
       return nextOffset
     },
-  })
-
-export const fetchProductDetail = async (id: number) => {
-  const url = `/products/${id}`
-  return handleFetch<Product>(url)
-}
-
-export const useFetchProductDetail = (id: number) =>
-  useQuery({
-    queryKey: ["product_detail", id],
-    queryFn: async () => {
-      const data = await fetchProductDetail(id)
-      return data
-    },
-    enabled: !!id,
   })
