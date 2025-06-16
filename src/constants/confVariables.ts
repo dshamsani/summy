@@ -1,1 +1,1 @@
-export const apiUrl = "reandom"
+export const apiUrl = "https://dummyjson.com"

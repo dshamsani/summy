@@ -81,9 +81,43 @@ h1 {
   font-weight: 600;
 }
 
-}
 
 
 [data-sonner-toast][data-styled="true"] [data-button] {
   background: transparent !important;
+}
+
+
+ @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  .shimmer {
+    animation:
+      fadeIn 500ms ease-out forwards,
+      shimmer 2s linear infinite;
+    animation-delay: 0s, 500ms;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--shimmer) 25%,
+      transparent 50%
+    );
+    background-size: 200% 100%;
+  }
+
 }
