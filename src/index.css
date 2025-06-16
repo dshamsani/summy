@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root[data-theme="dark"] {
+    --text: #fff;
+    --background: #252933;
+    --cardBg: #272c38;
+    --darker: #222730;
+    --primary: #79defd;
+    --darkBlue: #0094d4;
+    --secondaryText: #b0dff4;
+    --secondaryBg: #b0def412;
+    --border: #52575a;
+    --borderDarker: #5d6265;
+    --borderFaded: #404447;
+    --grayTextPrimary: #bec0c3;
+    --grayTextSecondary: #9fa3a8;
+    --scrollbar: #ffffff87;
+    --shimmer: #ffffff0d;
+    --completed: #079455;
+    --inProgress: #fdb022;
+    --notStarted: #f04438;
+    --all: #667085;
+    --bannerGradient: #232a32;
+    --purpleText: #9f70f7;
+    --redText: #f04438;
+    --yellowText: #f8b942;
+    --greenText: #18c852;
+    --hoverHighlight: #3e3e3c;
+    --highlightBorder: #fac415b2;
+    --tableHover: #292e36;
+  }
+
+  :root[data-theme="light"] {
+    --text: #101828;
+    --background: #fdfdfd;
+    --cardBg: #ffffff;
+    --darker: #f8f9fc;
+    --primary: #0094d4;
+    --darkBlue: #0094d4;
+    --secondaryText: #0094d4;
+    --secondaryBg: #effaff;
+    --borderFaded: #e2e1e1;
+    --border: #d0d5dd;
+    --borderDarker: #c0c5cc;
+    --grayTextPrimary: #3e4959;
+    --grayTextSecondary: #546175;
+    --scrollbar: #13294a91;
+    --shimmer: #2828280d;
+    --completed: #abefc6;
+    --inProgress: #fedf89;
+    --notStarted: #fecdca;
+    --all: #e4e7ec;
+    --bannerGradient: #f0f0f6;
+    --purpleText: #7d41ed;
+    --redText: #f04438;
+    --yellowText: #fdb022;
+    --greenText: #0cae34;
+    --hoverHighlight: #fef7c3;
+    --highlightBorder: #fac515;
+    --tableHover: #edf0f5;
+  }
+
+
+body,
+html {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+a {
+  &:hover {
+    color: var(--secondaryText);
+  }
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+}
+
+
+[data-sonner-toast][data-styled="true"] [data-button] {
+  background: transparent !important;
+}
