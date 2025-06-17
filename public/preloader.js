@@ -25,6 +25,7 @@ shadow.innerHTML = `
       background-color: ${theme === "dark" ? "#252933" : "#ffffff"};
       color: ${theme === "dark" ? "#d1d5db" : "#1f2937"};
       transition: opacity 0.3s ease;
+      width: 100vw;
     }
 
     .spinner {
