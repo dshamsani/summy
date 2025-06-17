@@ -13,7 +13,7 @@ export const ProductDetailPage: FC = () => {
 
   if (!product) {
     return (
-      <main className='container py-xl'>
+      <main className='container flex min-h-minHeight items-center justify-center py-xl'>
         <p className='text-center text-text'>Product data not available.</p>
       </main>
     )
